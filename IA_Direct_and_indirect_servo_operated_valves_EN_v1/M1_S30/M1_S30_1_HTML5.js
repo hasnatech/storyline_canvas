@@ -213,7 +213,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,224.9,112.5);
 
 	// Layer 1
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#999999").ss(1,1,1).p("ACAyCIAKAAIFMAAIAAVcIjrOpIhrAAIAAwqIkDAAIAAQqIhYAAIj6vMIAA05IFSAAIEDAAIAATbAiDBZIAAzb");
+	this.shape.graphics.f().s("#999999").ss(1,1,1).p("ACAyCIAKAAIFMAAIAAVcIjrOpIhrAAIAAwqIkDAAIAAzbAiDBZIAAQqIhYAAIj6vMIAA05IFSAAIEDAAIAATb");
 	this.shape.setTransform(47,115.5);
 
 	this.shape_1 = new cjs.Shape();
@@ -749,11 +749,11 @@ p.nominalBounds = new cjs.Rectangle(-10.3,-8.2,17,17);
 	this.shape_98.setTransform(109,26.1);
 
 	this.shape_99 = new cjs.Shape();
-	this.shape_99.graphics.f().s("#000000").ss(1,1,1).p("Egh6gVWIBTAAEggngOQIhTAAEggngJKIADAAEggngEeIADAAEggngHKIhTAAEggnAANIADAAEgh6gAEIBTAAEggnAE5IADAAEggnAJlIADAAEggnAHBIhTAAEgh6AOGIBTAAEggnAORIADAAA18VXIAAhSAWwVXIAAhSEAh7AVXIAAhSAqxVXIAAhSAAZVXIAAhSALkUFIAABS");
+	this.shape_99.graphics.f().s("#000000").ss(1,1,1).p("Egh6gVWIBTAAEggngOQIhTAAEggngHKIhTAAEggngEeIADAAEggngJKIADAAEgh6gAEIBTAAEggnAANIADAAEggnAHBIhTAAEggnAJlIADAAEggnAE5IADAAEgh6AOGIBTAAEggnAORIADAAA18VXIAAhSAWwVXIAAhSEAh7AVXIAAhSAqxVXIAAhSAAZVXIAAhSALkUFIAABS");
 	this.shape_99.setTransform(84.2,21.7);
 
 	this.shape_100 = new cjs.Shape();
-	this.shape_100.graphics.f().s("#666666").ss(1,1,1).p("EgimAXEIAAjoIAAhaIAAgUIAAgLIAAkhIAAikIAAiIIAAksIAAgSIAAg+IAAjbIAAisIAAiAIAAigIAAimIAAnGIAApdEgiIAXEIAAjoIAAhaIAAvoIAAqnIAAzJEgimAXEIjrAAQgKAAAAAKIAAAKQAAAKAKAAIDrAAIAAgeIAeAAEgiSAbXQAKAAAAgKIAAjrIgeAAIAADrQAAAKAKAAEgiIAXiICXAAICCAAIDDAAICxAAIEVAAIG2AAILMAAILKAAILLAAILLAAIAuAAIFoAAQAKAAAAgKIAAgKQAAgKgKAAMg5AAAAIg4AAInGAAIjDAAIkZAAg");
+	this.shape_100.graphics.f().s("#666666").ss(1,1,1).p("EgimAXEIAAjoIAAhaIAAgUIAAgLIAAkhIAAikIAAiIIAAksIAAgSIAAg+IAAjbIAAisIAAiAIAAigIAAimIAAnGIAApdEgiIAXEIAAjoIAAhaIAAvoIAAqnIAAzJEgimAXEIjrAAQgKAAAAAKIAAAKQAAAKAKAAIDrAAIAADrQAAAKAKAAEgimAXEIAeAAIAAAeIgeAAgEgiSAbXQAKAAAAgKIAAjrICXAAICCAAIDDAAICxAAIEVAAIG2AAILMAAILKAAILLAAILLAAIAuAAIFoAAQAKAAAAgKIAAgKQAAgKgKAAMg5AAAAIg4AAInGAAIjDAAIkZAA");
 	this.shape_100.setTransform(96.8,-0.4);
 
 	this.shape_101 = new cjs.Shape();
@@ -780,7 +780,7 @@ p.nominalBounds = new cjs.Rectangle(-396.5,-206.6,746.7,418.5);
 			var width = 380;
 			var per = (newX / width) * totalFrame  ;
 			console.log(evt.stageX, (newX / width), Math.floor(per) );
-			if(Math.floor(per) > 0){
+			if(Math.floor(per) > 0 && Math.floor(per) <= 15){
 				this.parent.main.gotoAndStop(Math.floor(per));	
 			}
 			if(newX > 0){
