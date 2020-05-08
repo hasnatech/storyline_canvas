@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Video</title>
+    <style>
+        .container {
+            position: relative;
+            max-width: 1024px;
+            width: 100%;
+        }
+
+        .btn {
+            text-align: center;
+            background-color: #ffffff;
+            border: 0;
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+            outline: 0;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        video {
+            max-width: 1024px;
+            width: 100%;
+        }
+    </style>
+
+<body>
+    <div class="container">
+        <video id="video" src="Application_v7.mp4"> </video>
+        <button id="btn" class="btn" onclick="btnClick()">
+            <img id="next" src="btn.png" alt="Next">
+            <p id="text">Step 1</p>
+        </button>
+    </div>
+    <script>
+        var stopArr = [6, 18, 24, 30]
+        var stopCount = 0;
+        var video = document.getElementById("video");
+        var interval;
+        function btnClick() {
+            video = document.getElementById("video");
+            document.getElementById("next").src = "btn.png";
+            document.getElementById("btn").style.display = "none";
+            console.log("btnClick");
+            video.play();
+            
+            clearInterval(interval);
+            interval = setInterval(function () {
+                console.log(stopCount, video.currentTime);
+                if (Math.floor(video.currentTime) == stopArr[stopCount]) {
+                    
+                    document.getElementById("btn").style.display = "block";
+                    stopCount++;
+                    document.getElementById("text").innerHTML = "Step " + (stopCount +1);
+                    video.pause();
+                    clearInterval(interval);
+                }
+            }, 500)
+        }
+        video.onended = function () {
+            document.getElementById("btn").style.display = "block";
+            document.getElementById("next").src = "replay.png";
+            document.getElementById("text").innerHTML = "Replay";
+            stopCount = 0;
+        };
+    </script>
+</body>
+
+</html>
