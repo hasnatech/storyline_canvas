@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer@0.3.1/dist/model-viewer.js">
+    </script>
+
+    <script nomodule src="https://unpkg.com/@google/model-viewer@0.3.1/dist/model-viewer-legacy.js">
+    </script>
+    <style>
+        model-viewer {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <model-viewer  src="glb/square.glb" image="glb/spruit_sunrise_1k_HDR.hdr" alt="A 3D model" auto-rotate camera-controls></model-viewer> -->
+    <div>
+        <button onclick="onClick(0)">Front View</button>
+        <button onclick="onClick(1)">Top View</button>
+        <button onclick="onClick(2)">Left View</button>
+
+    
+    </div>
+    <br>
+    <model-viewer id="orbit-demo" src="glb/3dobj.glb" alt="A 3D model" camera-orbit="45deg 55deg 2.5m" camera-controls>
+    </model-viewer>
+    <script>
+       
+        const modelViewer = document.querySelector('#orbit-demo');
+            const orbitCycle = [
+                '0deg 90deg 2.5m',
+                '0deg 0deg 2.5m',
+                '90deg 90deg 2.5m'
+            ];
+
+        function onClick(n) {
+            const currentOrbitIndex = orbitCycle.indexOf(modelViewer.cameraOrbit);
+            //modelViewer.cameraOrbit = orbitCycle[(currentOrbitIndex + 1) % orbitCycle.length];
+            modelViewer.cameraOrbit = orbitCycle[n];
+        }
+    </script>
+</body>
+
+</html>
