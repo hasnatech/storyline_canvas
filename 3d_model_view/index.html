@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-<!-- The following libraries and polyfills are recommended to maximize browser support -->
+    <title>3D</title>
+	
+    
+    <!-- The following libraries and polyfills are recommended to maximize browser support -->
     <!-- NOTE: you must adjust the paths as appropriate for your project -->
     
     <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
@@ -27,58 +29,74 @@
     <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
     <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
 
-
-
-    <script type="module" src="https://unpkg.com/@google/model-viewer@0.3.1/dist/model-viewer.js">
-    </script>
-
-    <script nomodule src="https://unpkg.com/@google/model-viewer@0.3.1/dist/model-viewer-legacy.js">
-    </script>
-    <style>
-        model-viewer {
-            width: 100%;
-            height: 500px;
-        }
-    </style>
-</head>
-
+  </head> 
 <body>
-    <!-- <model-viewer  src="glb/square.glb" image="glb/spruit_sunrise_1k_HDR.hdr" alt="A 3D model" auto-rotate camera-controls></model-viewer> -->
-    <div>
-        <button onclick="onClick(0)">Front View</button>
-        <button onclick="onClick(1)">Top View</button>
-        <button onclick="onClick(2)">Left View</button>
-
+  <div id="card">
+    <!-- All you need to put beautiful, interactive 3D content on your site: -->
+    <model-viewer
+	
+	src="https://cdn.glitch.com/6a6cb1bc-144b-46a1-aeb4-57cc61ffcf7f%2FModel3.glb?v=1589551783498"
+    ios-src="https://cdn.glitch.com/6a6cb1bc-144b-46a1-aeb4-57cc61ffcf7f%2FModel3.usdz?v=1589551938586"
+				  
+                  alt="Danfoss Model One"
+                  shadow-intensity="0"
+				  preload
+				  interaction-prompt="auto"
+				  camera-controls 
+				  ar-scale="auto"
+				  data-js-focus-visible
+				  ar 
+				  
+				  skybox-image="https://cdn.glitch.com/6a6cb1bc-144b-46a1-aeb4-57cc61ffcf7f%2Fbackground360.jpg?v=1589523786316"
+				  poster="https://cdn.glitch.com/6a6cb1bc-144b-46a1-aeb4-57cc61ffcf7f%2F1200px-Danfoss.png?v=1589529482623"
+                                  
+                                  magic-leap>
+                             </model-viewer>     
+                                  
+				  
+	
+	
+				 
+                  
+                  
     
-    </div>
-    <br>
+	
+	</div>
+	<div1 id = "card">
+	<model-viewer src="https://cdn.glitch.com/6a6cb1bc-144b-46a1-aeb4-57cc61ffcf7f%2FModel3.glb?v=1589551783498"
+                  ios-src="https://cdn.glitch.com/6a6cb1bc-144b-46a1-aeb4-57cc61ffcf7f%2FModel3.usdz?v=1589551938586"
+                  alt="Danfoss Model One"
+                  shadow-intensity="1"
+				  ar-scale="auto";
+				  camera-controls
+				  data-js-focus-visible
+                                  interaction-prompt="auto"
+				   ar
+				 environment-image="https://cdn.glitch.com/6a6cb1bc-144b-46a1-aeb4-57cc61ffcf7f%2Fbackground360.jpg?v=1589523786316"
+                                 poster="https://cdn.glitch.com/6a6cb1bc-144b-46a1-aeb4-57cc61ffcf7f%2F1200px-Danfoss.png?v=1589529482623"
+                                 
+				  magic-leap>
+   </model-viewer>
+				   
+   
+	</div1>
+    
+  
+  
+  
+  
+  
+  
+  <!-- 💁 Include both scripts below to support all browsers! -->
 
-    <model-viewer src="glb/3dobj.glb"
-    camera-orbit="45deg 55deg 2.5m"
-    id="orbit-demo"
-                  alt="A 3D model of an astronaut"
-                  shadow-intensity="0.5"
-                  camera-controls
-                  interaction-prompt="auto"
-                    ar magic-leap>
-    </model-viewer>
-    <!-- <model-viewer id="orbit-demo" src="glb/3dobj.glb" ar ar-modes="webxr scene-viewer quick-look fallback" ar-scale="auto" magic-leap  alt="A 3D model" camera-orbit="45deg 55deg 2.5m" camera-controls>
-    </model-viewer> -->
-    <script>
-       
-        const modelViewer = document.querySelector('#orbit-demo');
-            const orbitCycle = [
-                '0deg 90deg 2.5m',
-                '0deg 0deg 2.5m',
-                '90deg 90deg 2.5m'
-            ];
+  <!-- Loads <model-viewer> for modern browsers: -->
+  <script type="module"
+      src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer.js">
+  </script>
 
-        function onClick(n) {
-            const currentOrbitIndex = orbitCycle.indexOf(modelViewer.cameraOrbit);
-            //modelViewer.cameraOrbit = orbitCycle[(currentOrbitIndex + 1) % orbitCycle.length];
-            modelViewer.cameraOrbit = orbitCycle[n];
-        }
-    </script>
+  <!-- Loads <model-viewer> for old browsers like IE11: -->
+  <script nomodule
+      src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer-legacy.js">
+  </script>
 </body>
-
 </html>
