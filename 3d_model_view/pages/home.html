@@ -1,0 +1,11 @@
+<h1>3D Objects</h1>
+<div class="card-panel">
+    <div class="card" ng-repeat="i in items" ng-click="goto(i)">
+        <div class="img">
+            <img ng-src="{{i.thumnail}}" alt="{{i.title}}">
+        </div>
+        <div class="title">
+            {{i.title}}
+        </div>
+    </div>
+</div>
