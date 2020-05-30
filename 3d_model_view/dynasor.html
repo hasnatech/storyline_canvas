@@ -42,11 +42,8 @@
 <body>
     <!-- <model-viewer  src="glb/square.glb" image="glb/spruit_sunrise_1k_HDR.hdr" alt="A 3D model" auto-rotate camera-controls></model-viewer> -->
     <div>
-        <button onclick="onClick(0)">Front View</button>
-        <button onclick="onClick(1)">Top View</button>
-        <button onclick="onClick(2)">Left View</button>
-
-
+        <button onclick="play()">Play Animation</button>
+        <button onclick="pause()">Pause Animation</button>
     </div>
     <br>
 
@@ -68,11 +65,11 @@
             '90deg 90deg 2m'
         ];
 
-        function onClick(n) {
+        function play() {
             modelViewer.play()
-            //const currentOrbitIndex = orbitCycle.indexOf(modelViewer.cameraOrbit);
-            //modelViewer.cameraOrbit = orbitCycle[(currentOrbitIndex + 1) % orbitCycle.length];
-            //modelViewer.cameraOrbit = orbitCycle[n];
+        }
+        function pause() {
+            modelViewer.pause()
         }
     </script>
 </body>
